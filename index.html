@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+    <title>Document</title>
+</head>
+<body>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
+
+        body,html{
+            font-family: 'Poppins', sans-serif;
+            font-size: 16px;
+        }
+
+        .letter-true{
+            background-color: #5bc538;
+        }
+
+        .passed-text{
+            color: #5bc538;
+        }
+
+        .letter-false{
+            background-color: #F36747;
+        }
+
+        .letter-false, .letter-true{
+            padding: 3px;
+            border-radius: 3px;
+            color: #fff;
+        }
+
+        .text{
+            font-size: 18px;
+            outline:none;
+        }
+
+        .container{
+            max-width:970px;
+            margin: 0 auto;
+        }
+        .btn{
+            width:100%;
+            padding: 7px 0;
+            font-size: 18px;
+            margin-top: 10px;
+            border-radius:3px;
+            border:0;
+            transition: background .3s ease, color .3s ease;
+            background: #f1f1f1;
+            cursor:pointer;
+        }
+        .btn:hover{
+            background: #dcdcdc;
+        }
+    </style>
+    <div id="app">
+        <div class="container" v-cloak>
+            <div class="text" @keyup="typing"  tabindex="0" ></div>
+            <button class="btn" @click="start(false)" v-if="!started">Начать игру</button>
+            <button class="btn" @click="start(true)" v-if="started">Заново</button>
+            <div class="info">
+                <p>Скорость: {{tKeyInMin}} Зн/Мин</p>
+                <p>Тоность: {{accurancy.toFixed(1)}}% </p>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vue@3.0.10/dist/vue.global.prod.js"></script>
+    <script type="text/javascript" src="app.js"></script>
+</body>
+</html>
